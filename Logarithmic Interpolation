@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+double logarithmicInterpolation(double x1, double y1, double x2, double y2, double x) {
+    if (x2 == x1) {
+        cout << "Error" << endl;
+        return -1;
+    }
+    return y1+((y2-y1)/(log(x2)-log(x1))*(log(x)-log(x1)));
+}
+
+int main() {
+    double x1, y1, x2, y2, x;
+    cout << "Enter x1 and y1: ";
+    cin>>x1>>y1;
+    cout << "Enter x2 and y2: ";
+    cin>>x2>>y2;
+    cout << "Enter the value of x: ";
+    cin >> x;
+    double y = logarithmicInterpolation(x1, y1, x2, y2, x);
+    if (y != -1) 
+    {
+        cout<<"The interpolated value of y at x = "<<x<<" is "<<y<<endl;
+    }
+    return 0;
+}
+//sonal bibhuti
