@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+double linearInterpolation(double x0, double y0, double x1, double y1, double x) {
+    if (x1 == x0) {
+        cout << "Error" << endl;
+        return -1;
+    }
+    return y0+((y1-y0)/(x1-x0))*(x-x0);
+}
+
+int main() {
+    double x0, y0, x1, y1, x;
+    cout << "Enter x0 and y0: ";
+    cin>>x0>>y0;
+    cout << "Enter x1 and y1: ";
+    cin>>x1>>y1;
+    cout << "Enter the value of x: ";
+    cin >> x;
+    double y = linearInterpolation(x0, y0, x1, y1, x);
+    if (y != -1) 
+    {
+        cout<<"The interpolated value of y at x = "<<x<<" is "<<y<<endl;
+    }
+    return 0;
+}
+// by sonal bibhuti
